@@ -18,9 +18,9 @@ internal static class NinghongPayTestHost
 
                 _ = configBuilder.AddInMemoryCollection(new Dictionary<string, string?>
                 {
-                    ["FuKaiPay:PaymentApiUrl"] = "https://localhost",
-                    ["FuKaiPay:CallbackBaseUrl"] = "https://dev-payment.rpgp.cc/fukaipay",
-                    ["FuKaiPay:PaymentServiceBaseUrl"] = "http://localhost:5541"
+                    ["NinghongPay:PaymentApiUrl"] = "https://localhost",
+                    ["NinghongPay:CallbackBaseUrl"] = "https://localhost",
+                    ["NinghongPay:PaymentServiceBaseUrl"] = "http://localhost:5541"
                 });
             })
             .ConfigureServices(services => services
