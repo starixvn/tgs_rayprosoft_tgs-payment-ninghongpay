@@ -30,8 +30,8 @@ var logger = app.Services.GetRequiredService<ILogger<Program>>();
 
 var paymentClient = app.Services.GetRequiredService<IPaymentClient>();
 
-var merchantCode = "Pay_991837";
-var secretKey = "1f6786624d26a3caf570576880a13d9d";
+var merchantCode = "merchantCode";
+var secretKey = "secretKey";
 
 //代收
 /*
@@ -53,7 +53,7 @@ logger.LogInformation($"deposit return: {depositreturn}");*/
 
 
 //代付
-
+/*
 var orderNo = Guid.NewGuid();
 var withdrawSettings = new NinghongPayWithdrawSettings(
     merchantCode,
@@ -69,7 +69,7 @@ var withdrawReturn = await paymentClient.WithdrawAsync(
     100M,
     JsonSerializer.Serialize(withdrawSettings));
 logger.LogInformation($"Withdraw Return: {withdrawReturn}");
-
+*/
 //代收訂單查詢
 /*
 var queryFormId = Guid.Parse("337dbbc7-d701-426e-b1d4-baf045ad7c21");
