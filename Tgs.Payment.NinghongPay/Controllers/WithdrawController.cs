@@ -20,7 +20,7 @@ public class WithdrawController(ILogger<WithdrawController> logger) : Controller
         [FromServices] IPaymentClient paymentClient,
         [FromBody] CallbackWithdrawViewModel source)        
     {
-        logger.LogInformation("{source}", source);
+        logger.LogInformation("Withdraw Callback:{source}", JsonSerializer.Serialize(source));
         
         var formId = Guid.Parse(source.Payload.MerTx);
 

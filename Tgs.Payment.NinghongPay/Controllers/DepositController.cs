@@ -19,7 +19,7 @@ public class DepositController(ILogger<DepositController> logger) : ControllerBa
        [FromServices] IPaymentClient paymentClient,
        [FromBody] CallbackDepositViewModel source)
     {
-        logger.LogInformation("{source}", source);
+        logger.LogInformation("Deposit Callback:{source}", JsonSerializer.Serialize(source));
         
         var formId = Guid.Parse(source.Payload.MerTx);
 
