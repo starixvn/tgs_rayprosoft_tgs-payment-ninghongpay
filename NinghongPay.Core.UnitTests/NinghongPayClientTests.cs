@@ -42,8 +42,8 @@ public class NinghongPayClientTests
 
         var sut = new NinghongPayClient(httpClient, signer, NullLogger<NinghongPayClient>.Instance);
 
-        var merchantCode = "merchantCode";
         var token = "token";
+        var merchantCode = "merchantCode";
 
         _ = mockHttp.Expect(HttpMethod.Post, "https://localhost/api/v1/check-balance")
             .Respond(HttpStatusCode.OK, new StringContent("""
@@ -59,7 +59,7 @@ public class NinghongPayClientTests
                 }
                 """));
 
-        var actual = await sut.QueryBalanceAsync(merchantCode, token);
+        var actual = await sut.QueryBalanceAsync(token, merchantCode);
 
         Assert.Equal(0, actual);
     }

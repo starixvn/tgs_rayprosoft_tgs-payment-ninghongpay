@@ -20,8 +20,8 @@ internal class GetBalanceProcessor(NinghongPayClient ninghongPayClient)
             .ConfigureAwait(false);
 
         var result = await ninghongPayClient.QueryBalanceAsync(
-            settings.MerchantCode,
             token,
+            settings.MerchantCode,
             cancellationToken).ConfigureAwait(false);
 
         return new PaymentBalanceResponse
